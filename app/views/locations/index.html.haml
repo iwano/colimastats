@@ -1,3 +1,25 @@
+/$.ajax({type: 'GET', url: '/groups/name', data: {name: name, id: id}});
+= gmaps4rails(@json)
+
+%script{:charset => "utf-8", :type => "text/javascript"}
+  function gmaps4rails_callback() {
+  google.maps.event.addListener(Gmaps4Rails.map, "click", function() {
+  alert("You clicked the map.");
+  });
+  function say_yo(arg) { return function(){coco(Gmaps4Rails.markers[arg].description);};};
+  for (var i = 0; i <  Gmaps4Rails.markers.length; ++i) {
+  google.maps.event.addListener(Gmaps4Rails.markers[i].google_object, 'click', say_yo(i));
+  }
+  }
+  function coco(description){
+  var city_name = '';
+  description = description.substr(4);
+  var indx = description.indexOf('<');
+  city_name = description.substr(0, indx);
+  $('#city_name').text(city_name);
+  }
+= link_to 'New Location', new_location_path
+%br
 %h1 Listing locations
 
 %table
@@ -19,8 +41,4 @@
       %td= link_to 'Show', location
       %td= link_to 'Edit', edit_location_path(location)
       %td= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-= gmaps4rails(@json)
-= link_to 'New Location', new_location_path
 

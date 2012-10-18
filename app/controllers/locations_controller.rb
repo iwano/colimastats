@@ -1,6 +1,13 @@
 class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
+  def getcity
+    @city = Location.find(params[:id])
+    respond_to do |format|  
+      format.js 
+    end
+  end
+
   def index
     @locations = Location.all
     @json = Location.all.to_gmaps4rails
