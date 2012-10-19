@@ -25,5 +25,9 @@ class Stat < ActiveRecord::Base
   :ocupvivivpar, :prom_ocup, :pro_ocup_c, :vph_pisodt, :vph_pisoti, :vph_1dor, :vph_2ymasd, 
   :vph_1cuart, :vph_2cuart, :vph_3ymascuart, :vph_c_elec, :vph_s_elec, :vph_aguadv, :vph_aguafv, 
   :vph_excsa, :vph_drenaj, :vph_nodren, :vph_c_serv, :vph_snbien, :vph_radio, :vph_tv, :vph_refri, 
-  :vph_lavad, :vph_auto, :vph_pc, :vph_tel, :vph_cell, :vph_inter, :tam_loc
+  :vph_lavad, :vph_auto, :vph_pc, :vph_tel, :vph_cell, :vph_inter, :tam_loc, :locality_number
+
+  belongs_to :locality
+  belongs_to :state
+  belongs_to :city
 end
