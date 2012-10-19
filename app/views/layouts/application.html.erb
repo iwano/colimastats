@@ -9,11 +9,11 @@
   	#main{
 		display: inline-block;
 		float:left;
-		margin-top: -8px;
-		margin-left: -8px;
+		margin-top: -7px;
+		margin-left: -7px;
 	}
 	#stats{
-		border:2px solid #222;
+		border-top:1px solid #222;
 		float:left;
 	}
 	#stats h1{
@@ -45,12 +45,7 @@
   </style>
 </head>
 <body>
-  <div id='main'>
     <%= yield %>
-  </div>
-  <div id='stats'>
-    <%= render 'layouts/stats' %>
-  </div>
   <%= yield :scripts %>
 </body>
 </html>

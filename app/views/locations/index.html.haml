@@ -1,44 +1,81 @@
-/$.ajax({type: 'GET', url: '/groups/name', data: {name: name, id: id}});
-= gmaps4rails(@json)
+#main  
+  /$.ajax({type: 'GET', url: '/groups/name', data: {name: name, id: id}});
+  = gmaps4rails(@json)
 
-%script{:charset => "utf-8", :type => "text/javascript"}
-  function gmaps4rails_callback() {
-  google.maps.event.addListener(Gmaps4Rails.map, "click", function() {
-  alert("You clicked the map.");
-  });
-  function say_yo(arg) { return function(){coco(Gmaps4Rails.markers[arg].description);};};
-  for (var i = 0; i <  Gmaps4Rails.markers.length; ++i) {
-  google.maps.event.addListener(Gmaps4Rails.markers[i].google_object, 'click', say_yo(i));
-  }
-  }
-  function coco(description){
-  var city_name = '';
-  description = description.substr(4);
-  var indx = description.indexOf('<');
-  city_name = description.substr(0, indx);
-  $('#city_name').text(city_name);
-  }
-= link_to 'New Location', new_location_path
-%br
-%h1 Listing locations
+  %script{:charset => "utf-8", :type => "text/javascript"}
+    function gmaps4rails_callback() {
+    google.maps.event.addListener(Gmaps4Rails.map, "click", function() {
+    alert("You clicked the map.");
+    });
+    function say_yo(arg) { return function(){get_city_name(Gmaps4Rails.markers[arg].description);};};
+    for (var i = 0; i <  Gmaps4Rails.markers.length; ++i) {
+    google.maps.event.addListener(Gmaps4Rails.markers[i].google_object, 'click', say_yo(i));
+    }
+    }
+    function get_city_name(description){
+    var city_name = '';
+    description = description.substr(4);
+    var indx = description.indexOf('<');
+    city_name = description.substr(0, indx);
+    $('#city_name').text(city_name);
+    }
 
-%table
-  %tr
-    %th Name
-    %th Address
-    %th Longitude
-    %th Latitude
-    %th
-    %th
-    %th
+    /$('#gmaps').live('pageshow',function(event){Gmaps.loadMaps();});
 
-  - @locations.each do |location|
+  = link_to 'New Location', new_location_path
+  %br
+  %h1 Listing locations
+
+  %table
     %tr
-      %td= location.name
-      %td= location.address
-      %td= location.longitude
-      %td= location.latitude
-      %td= link_to 'Show', location
-      %td= link_to 'Edit', edit_location_path(location)
-      %td= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
+      %th Name
+      %th Address
+      %th Longitude
+      %th Latitude
+      %th
+      %th
+      %th
 
+    - @locations.each do |location|
+      %tr
+        %td= location.name
+        %td= location.address
+        %td= location.longitude
+        %td= location.latitude
+        %td= link_to 'Show', location
+        %td= link_to 'Edit', edit_location_path(location)
+        %td= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+%nav#main-nav
+  /= form_tag "/stats/get_stats", :method => "get", id: "search_form" do
+  /= f.collection_select :state_id, State.find(:all), :id, :name, :prompt => "Select a State", required: true
+  /= f.collection_select :city_id, City.find(:all), :id, :name, :prompt => "Select a City", required: true
+  /= f.collection_select :locality_id, Locality.find(:all), :id, :name, :prompt => "Select a Locality", required: true
+  = select( "payment", "id", { "Visa" => "1", "Mastercard" => "2"})
+  = select( "payment", "id", { "Visa" => "1", "Mastercard" => "2"})
+  = select( "payment", "id", { "Visa" => "1", "Mastercard" => "2"})
+  %a{:href => "/", :title => "Help"} ?
+  %a{:href => "/", :title => "New outside location"} * 
+  %br/
+  %button{:name => "button"} Find
+
+
+#stats
+  %h1 Stats
+  %table
+    %tr
+      %th City name
+      %th Pop.
+      %th M
+      %th F
+      %th Ext.
+      %th Data
+      %th Data
+    %tr
+      %td#city_name
+      %td 
+      %td 
+      %td 
+      %td 
+      %td 
