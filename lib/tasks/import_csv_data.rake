@@ -4,7 +4,7 @@ namespace :db do
   task :load_csv_data  => :environment do
   require 'csv'
 
-    CSV.foreach("data.csv", "r:ISO-8859-1") do |row|
+    CSV.foreach("data.csv") do |row|
       Stat.create(
         :state_id => row[0],
         :city_id => row[1],
