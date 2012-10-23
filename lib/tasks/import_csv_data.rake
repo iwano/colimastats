@@ -203,7 +203,7 @@ namespace :db do
         :vph_tel => row[194], 
         :vph_cell => row[195], 
         :vph_inter => row[196], 
-        :tam_loc => row[197], 
+        :tam_loc => row[197]
       )
     end
   end
