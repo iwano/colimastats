@@ -4,11 +4,11 @@ namespace :db do
   task :load_csv_data2  => :environment do
     require 'csv'
 
-    CSV.foreach("localities.csv", 'u') do |row|
+    CSV.foreach("localities.csv") do |row|
       Locality.create(
-        :city_id => row[0].to_i,
+        :city_id => row[0],
         :name => row[1].to_s,
-        :state_id => row[2].to_i
+        :state_id => row[2]
       )
     end
   end
