@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require_tree .
 
+
+//if(typeof gmaps4rails_callback == 'function') { gmaps4rails_callback(); }
 function gmaps4rails_callback() {
   
   // google.maps.event.addListener(Gmaps4Rails.map, "load", function() {
