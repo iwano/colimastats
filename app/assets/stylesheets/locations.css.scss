@@ -1,3 +1,54 @@
 // Place all the styles related to the Locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+  font-size: 1.2em;
+  color:#ff5e4f;
+  margin-bottom: 1px;
+}
+#location_state_id{
+  float:left;
+}
+#main{
+  display: inline-block;
+  float:left;
+  margin-top: -7px;
+  margin-left: -7px;
+  margin-right: 1em;
+}
+#stats{
+  border-top:1px solid #222;
+}
+#stats h1{
+  color:#1B818C;
+}
+#stats table
+{
+  border-collapse:collapse;
+  th,td{
+      border:1px solid #aaa;
+  }
+}
+#markers table{
+  border-collapse: collapse;
+  th,td{ 
+      border: none;
+      border:1px solid #aaa;
+    }
+  th a{
+    text-decoration: none
+  }
+}
+
+#city_name{
+  color:blue;
+}
+#stats{
+  height: 350px;
+  overflow-y: scroll;
+}
+#markers{
+  height:217px;
+  overflow-y:scroll;
+}

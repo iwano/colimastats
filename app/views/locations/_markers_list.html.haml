@@ -1,0 +1,8 @@
+#markers
+  %table
+
+    - @locations.each do |location|
+      %tr
+        %th= link_to location.name, '/', class: 'show_marker_stats'
+        %td= link_to 'Detalles', location
+        %td= link_to 'Borrar', location, method: :delete, data: { confirm: 'Are you sure?' }

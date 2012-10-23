@@ -1,0 +1,14 @@
+%nav#main-nav
+  = form_for((@location), :remote=>true) do |f|
+    = f.collection_select :state_id, @states, :id, :name, :prompt => "State", required: true
+    #citiesSelect
+      = render 'cities', f: f
+    #localitiesSelect
+      = render 'localities', f: f
+    %a{:href => "/", :title => "Help"} ?
+    %a{:href => "/", :title => "Hide Markers", :id => "hideMarkers"} x
+    %a{:href => "/", :title => "Show Markers", :id => "showMarkers"} #
+    %a{:href => "/", :title => "Reload", :id => "reload"} +
+    %button{:href => "/", :title => "Go here", :id => "gohere", :disabled => true} ><
+    = link_to 'New Location', new_location_path
+    %br/

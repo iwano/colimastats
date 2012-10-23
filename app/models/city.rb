@@ -3,4 +3,7 @@ class City < ActiveRecord::Base
   has_many :localities
   has_many :stats
   belongs_to :state
+  has_many :locations
+
+  default_scope order: 'cities.name ASC'
 end

@@ -1,0 +1,4 @@
+- if !@cities.blank?
+  = select("location", "city_id", @cities.collect {|p| [ p.name, p.id ] }, { :prompt => "City" })
+- else
+  = select("location", "city_id", [], { :prompt => "City" })

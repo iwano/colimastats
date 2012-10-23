@@ -15,10 +15,10 @@ var Gmaps4Rails = {
 	  center_on_user: false,   // centers map on the location detected through the browser
 		center_latitude: 0,
 		center_longitude: 0, 
-		zoom: 1,
+		zoom: 2,
 		maxZoom: null,
 		minZoom: null,
-		auto_adjust : false,    // adjust the map to the markers if set to true
+		auto_adjust : true,    // adjust the map to the markers if set to true
 		auto_zoom: true,        // zoom given by auto-adjust
 		bounds: []              // adjust map to these limits. Should be [{"lat": , "lng": }]
 	},				
@@ -37,7 +37,7 @@ var Gmaps4Rails = {
 	  do_clustering: true,			// do clustering if set to true
 	  clusterer_gridSize: 50,		// the more the quicker but the less precise
 		clusterer_maxZoom:  5,		// removes clusterer  at this zoom level
-		randomize: false,         // Google maps can't display two markers which have the same coordinates. This randomizer enables to prevent this situation from happening.
+		randomize: true,         // Google maps can't display two markers which have the same coordinates. This randomizer enables to prevent this situation from happening.
 		max_random_distance: 100, // in meters. Each marker coordinate could be altered by this distance in a random direction
 		list_container: null,     // id of the ul that will host links to all markers
 		custom_cluster_pictures: null,

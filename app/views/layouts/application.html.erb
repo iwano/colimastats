@@ -1,49 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Colimastats</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <style>
-  	#main{
-		display: inline-block;
-		float:left;
-		margin-top: -7px;
-		margin-left: -7px;
-	}
-	#stats{
-		border-top:1px solid #222;
-		float:left;
-	}
-	#stats h1{
-		color:#FF0000;
-	}
-	#stats table
-	{
-		border-collapse:collapse;
-	}
-	#stats table,th,td
-	{
-		border:1px solid black;
-	}
-	#stats table,th
-	{
-		padding:8px;
-	}
-	#main table{
-		border-collapse: collapse;
-	}
-	#main table,th,td
-	{	
-		border: none;
-		border-top:1px solid black;
-	}
-	#city_name{
-		color:blue;
-	}
-  </style>
-</head>
+<%=render 'layouts/header'%>
 <body>
     <%= yield %>
   <%= yield :scripts %>

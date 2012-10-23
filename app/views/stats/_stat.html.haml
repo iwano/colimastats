@@ -1,0 +1,592 @@
+%table#stats_table  
+  %tr
+    %th Name
+    %td=@stat.locality.name
+  %tr
+    %th State
+    %td=@stat.state.name
+  %tr
+    %th City
+    %td=@stat.city.name
+  %tr
+    %th Longitud
+    %td=@stat.longitude
+  %tr
+    %th Latitud
+    %td=@stat.latitude
+  %tr
+    %th Altitud
+    %td=@stat.altitude
+  %tr
+    %th Pob Total
+    %td=@stat.pobtot
+  %tr
+    %th Pob Masc
+    %td=@stat.pobmas
+  %tr
+    %th Pob Masc
+    %td=@stat.pobfem
+  %tr
+    %th Pob 0 - 2
+    %td=@stat.p0a2
+  %tr
+    %th Pob 0 - 2 Masc
+    %td=@stat.p0a2_m
+  %tr
+    %th Pob 0 - 2 Fem
+    %td=@stat.p0a2_f
+  %tr
+    %th Pob 3 y mas
+    %td=@stat.p3ymas
+  %tr
+    %th Pob 3 y mas Masc
+    %td=@stat.p3ymas_m
+  %tr
+    %th Pob 3 y mas Fem
+    %td=@stat.p3ymas_f
+  %tr
+    %th Pob 5 y mas
+    %td=@stat.p5ymas
+  %tr
+    %th Pob 5 y mas Masc
+    %td=@stat.p5ymas_m
+  %tr
+    %th Pob 5 y mas Fem
+    %td=@stat.p5ymas_f
+  %tr
+    %th Pob 12 y mas
+    %td=@stat.p12ymas
+  %tr
+    %th Pob 12 y mas Masc
+    %td=@stat.p12ymas_m
+  %tr
+    %th Pob 12 y mas Fem
+    %td=@stat.p12ymas_f
+  %tr
+    %th Pob 15 y mas
+    %td=@stat.p15ymas
+  %tr
+    %th Pob 15 y mas Masc
+    %td=@stat.p15ymas_m
+  %tr
+    %th Pob 15 y mas Fem
+    %td=@stat.p15ymas_f
+  %tr
+    %th Pob 18 y mas
+    %td=@stat.p18ymas
+  %tr
+    %th Pob 18 y mas Masc
+    %td=@stat.p15ymas_m
+  %tr
+    %th Pob 18 y mas Fem
+    %td=@stat.p15ymas_f
+  %tr
+    %th Pob 3 - 5
+    %td=@stat.p3a5
+  %tr
+    %th Pob 3 - 5 Masc
+    %td=@stat.p3a5_m
+  %tr
+    %th Pob 3 - 5 Fem
+    %td=@stat.p3a5_f
+  %tr
+    %th Pob 6 - 11
+    %td=@stat.p6a11
+  %tr
+    %th Pob 6 - 11 Masc
+    %td=@stat.p6a11_m
+  %tr
+    %th Pob 6 - 11 Fem
+    %td=@stat.p6a11_f
+  %tr
+    %th Pob 8 - 14
+    %td=@stat.p8a14
+  %tr
+    %th Pob 8 - 14 Masc
+    %td=@stat.p8a14_m
+  %tr
+    %th Pob 8 - 14 Fem
+    %td=@stat.p8a14_f
+  %tr
+    %th Pob 12 - 14
+    %td=@stat.p12a14
+  %tr
+    %th Pob 12 - 14 Masc
+    %td=@stat.p12a14_m
+  %tr
+    %th Pob 12 - 14 Fem
+    %td=@stat.p12a14_f
+  %tr
+    %th Pob 15 - 17
+    %td=@stat.p15a17
+  %tr
+    %th Pob 15 - 17 Masc
+    %td=@stat.p15a17_m
+  %tr
+    %th Pob 15 - 17 Fem
+    %td=@stat.p15a17_f
+  %tr
+    %th Pob 18 - 24
+    %td=@stat.p18a24
+  %tr
+    %th Pob 18 - 24 Masc
+    %td=@stat.p18a24_m
+  %tr
+    %th Pob 18 - 24 Fem
+    %td=@stat.p18a24_f
+  %tr
+    %th Pob 15 - 49 Fem
+    %td=@stat.p15a49_f
+  %tr
+    %th Pob 60 y mas
+    %td=@stat.p60ymas 
+  %tr
+    %th Pob 60 y mas Masc
+    %td=@stat.p60ymas_m
+  %tr
+    %th Pob 60 y mas Fem
+    %td=@stat.p60ymas_f
+  %tr
+    %th rel_h_m --***
+    %td=@stat.rel_h_m
+  %tr
+    %th Pob 0 - 14
+    %td=@stat.p0a14
+  %tr
+    %th Pob 15 - 64
+    %td=@stat.p15a64
+  %tr
+    %th Pob 65 y mas
+    %td=@stat.p0a14
+  %tr
+    %th Prom hnv --***
+    %td=@stat.prom_hnv
+  %tr
+    %th pnacent --***
+    %td=@stat.pnacent
+  %tr
+    %th pnacent Masc --***
+    %td=@stat.pnacent_m
+  %tr
+    %th pnacent Fem--***
+    %td=@stat.pnacent_f
+  %tr
+    %th pnacoe --***
+    %td=@stat.pnacoe
+  %tr
+    %th pnacoe Masc--***
+    %td=@stat.pnacoe_m
+  %tr
+    %th pnacoe Fem --***
+    %td=@stat.pnacoe_f
+  %tr
+    %th pres2005 --***
+    %td=@stat.pres2005
+  %tr
+    %th pres2005 Masc--***
+    %td=@stat.pres2005_m
+  %tr
+    %th pres2005 Fem--***
+    %td=@stat.pres2005_f
+  %tr
+    %th presoe05 --***
+    %td=@stat.presoe05
+  %tr
+    %th presoe05 Masc--***
+    %td=@stat.presoe05_m
+  %tr
+    %th presoe05 Fem--***
+    %td=@stat.presoe05_f
+  %tr
+    %th p3ym_hli --***
+    %td=@stat.p3ym_hli
+  %tr
+    %th p3ym_hli Masc--***
+    %td=@stat.p3ym_hli_m
+  %tr
+    %th p3ym_hli Fem--***
+    %td=@stat.p3ym_hli_f
+  %tr
+    %th p3hlinhe--***
+    %td=@stat.p3hlinhe
+  %tr
+    %th p3hlinhe Masc--***
+    %td=@stat.p3hlinhe_m
+  %tr
+    %th p3hlinhe Fem--***
+    %td=@stat.p3hlinhe_f
+  %tr
+    %th p3hli_he--***
+    %td=@stat.p3hli_he
+  %tr
+    %th p3hli_he Masc--***
+    %td=@stat.p3hli_he_m
+  %tr
+    %th p3hli_he Fem--***
+    %td=@stat.p3hli_he_f
+  %tr
+    %th p5hli--***
+    %td=@stat.p5hli
+  %tr
+    %th p5hli_nhe--***
+    %td=@stat.p5hli_nhe
+  %tr
+    %th p5hli_he--***
+    %td=@stat.p5hli_he
+  %tr
+    %th phog_ind--***
+    %td=@stat.phog_ind
+  %tr
+    %th pcon_lim--***
+    %td=@stat.pcon_lim
+  %tr
+    %th pclim_mot--***
+    %td=@stat.pclim_mot
+  %tr
+    %th pclim_vis--***
+    %td=@stat.pclim_vis
+  %tr
+    %th pclim_leng--***
+    %td=@stat.pclim_leng
+  %tr
+    %th pclim_aud--***
+    %td=@stat.pclim_aud
+  %tr
+    %th pclim_mot2--***
+    %td=@stat.pclim_mot2
+  %tr
+    %th pclim_men--***
+    %td=@stat.pclim_men
+  %tr
+    %th pclim_men2--***
+    %td=@stat.pclim_men2
+  %tr
+    %th psin_lim--***
+    %td=@stat.psin_lim
+  %tr
+    %th p3a5_noa--***
+    %td=@stat.p3a5_noa
+  %tr
+    %th p3a5_noa_m--***
+    %td=@stat.p3a5_noa_m
+  %tr
+    %th p3a5_noa_f--***
+    %td=@stat.p3a5_noa_f
+  %tr
+    %th p6a11_noa--***
+    %td=@stat.p6a11_noa
+  %tr
+    %th p6a11_noa_m--***
+    %td=@stat.p6a11_noa_m
+  %tr
+    %th p6a11_noa_f--***
+    %td=@stat.p6a11_noa_f
+  %tr
+    %th p12a14noa--***
+    %td=@stat.p12a14noa
+  %tr
+    %th p12a14noa_m--***
+    %td=@stat.p12a14noa_m
+  %tr
+    %th p12a14noa_f--***
+    %td=@stat.p12a14noa_f
+  %tr
+    %th p15a17a--***
+    %td=@stat.p15a17a
+  %tr
+    %th p15a17a_m--***
+    %td=@stat.p15a17a_m
+  %tr
+    %th p15a17a_f--***
+    %td=@stat.p15a17a_f
+  %tr
+    %th p18a24a--***
+    %td=@stat.p18a24a
+  %tr
+    %th p18a24a_m--***
+    %td=@stat.p18a24a_m
+  %tr
+    %th p18a24a_f--***
+    %td=@stat.p18a24a_f
+  %tr
+    %th p8a14an--***
+    %td=@stat.p8a14an
+  %tr
+    %th p8a14an_m--***
+    %td=@stat.p8a14an_m
+  %tr
+    %th p8a14an_f--***
+    %td=@stat.p8a14an_f
+  %tr
+    %th p15ym_an--***
+    %td=@stat.p15ym_an
+  %tr
+    %th p15ym_an_m--***
+    %td=@stat.p15ym_an_m
+  %tr
+    %th p15ym_an_f--***
+    %td=@stat.p15ym_an_f
+  %tr
+    %th p15ym_se--***
+    %td=@stat.p15ym_se
+  %tr
+    %th p15ym_se_m--***
+    %td=@stat.p15ym_se_m
+  %tr
+    %th p15ym_se_f--***
+    %td=@stat.p15ym_se_f
+  %tr
+    %th p15pri_in--***
+    %td=@stat.p15pri_in
+  %tr
+    %th p15pri_in_m--***
+    %td=@stat.p15pri_in_m
+  %tr
+    %th p15pri_in_f--***
+    %td=@stat.p15pri_in_f
+  %tr
+    %th p15pri_co--***
+    %td=@stat.p15pri_co
+  %tr
+    %th p15pri_com--***
+    %td=@stat.p15pri_com
+  %tr
+    %th p15pri_cof--***
+    %td=@stat.p15pri_cof
+  %tr
+    %th p15sec_in--***
+    %td=@stat.p15sec_in
+  %tr
+    %th p15sec_in_m--***
+    %td=@stat.p15sec_in_m
+  %tr
+    %th p15sec_in_f--***
+    %td=@stat.p15sec_in_f
+  %tr
+    %th p15sec_co--***
+    %td=@stat.p15sec_co
+  %tr
+    %th p15sec_co_m--***
+    %td=@stat.p15sec_co_m
+  %tr
+    %th p15sec_co_f--***
+    %td=@stat.p15sec_co_f
+  %tr
+    %th p18ym_pb--***
+    %td=@stat.p18ym_pb
+  %tr
+    %th p18ym_pb_m--***
+    %td=@stat.p18ym_pb_m
+  %tr
+    %th p18ym_pb_f--***
+    %td=@stat.p18ym_pb_f
+  %tr
+    %th graproes--***
+    %td=@stat.graproes
+  %tr
+    %th graproes_m--***
+    %td=@stat.graproes_m
+  %tr
+    %th graproes_f--***
+    %td=@stat.graproes_f
+  %tr
+    %th pea--***
+    %td=@stat.pea
+  %tr
+    %th pea_m--***
+    %td=@stat.pea_m
+  %tr
+    %th pea_f--***
+    %td=@stat.pea_f
+  %tr
+    %th pe_inac--***
+    %td=@stat.pe_inac
+  %tr
+    %th pe_inac_m--***
+    %td=@stat.pe_inac_m
+  %tr
+    %th pe_inac_f--***
+    %td=@stat.pe_inac_f
+  %tr
+    %th pocupada--***
+    %td=@stat.pocupada
+  %tr
+    %th pocupada_m--***
+    %td=@stat.pocupada_m
+  %tr
+    %th pocupada_f--***
+    %td=@stat.pocupada_f
+  %tr
+    %th pdesocup--***
+    %td=@stat.pdesocup
+  %tr
+    %th pdesocup_m--***
+    %td=@stat.pdesocup_m
+  %tr
+    %th pdesocup_f--***
+    %td=@stat.pdesocup_f
+  %tr
+    %th psinder--***
+    %td=@stat.psinder
+  %tr
+    %th pder_ss--***
+    %td=@stat.pder_ss
+  %tr
+    %th pder_imss--***
+    %td=@stat.pder_imss
+  %tr
+    %th pder_iste--***
+    %td=@stat.pder_iste
+  %tr
+    %th pder_istee--***
+    %td=@stat.pder_istee
+  %tr
+    %th pder_segp--***
+    %td=@stat.pder_segp
+  %tr
+    %th p12ym_solt--***
+    %td=@stat.p12ym_solt
+  %tr
+    %th p12ym_casa--***
+    %td=@stat.p12ym_casa
+  %tr
+    %th p12ym_sepa--***
+    %td=@stat.p12ym_sepa
+  %tr
+    %th pcatolica--***
+    %td=@stat.pcatolica
+  %tr
+    %th pncatolica--***
+    %td=@stat.pncatolica
+  %tr
+    %th potras_rel--***
+    %td=@stat.potras_rel
+  %tr
+    %th psin_religion--***
+    %td=@stat.psin_religion
+  %tr
+    %th tothog--***
+    %td=@stat.tothog
+  %tr
+    %th hogjef_m--***
+    %td=@stat.hogjef_m
+  %tr
+    %th hogjef_f--***
+    %td=@stat.hogjef_f
+  %tr
+    %th pobhog--***
+    %td=@stat.pobhog
+  %tr
+    %th phogjef_m--***
+    %td=@stat.phogjef_m
+  %tr
+    %th phogjef_f--***
+    %td=@stat.phogjef_f
+  %tr
+    %th vivitot--***
+    %td=@stat.vivitot
+  %tr
+    %th vivihab--***
+    %td=@stat.vivihab
+  %tr
+    %th vivipar--***
+    %td=@stat.vivipar
+  %tr
+    %th vivipar_hab--***
+    %td=@stat.vivipar_hab
+  %tr
+    %th tviviparhab--***
+    %td=@stat.tviviparhab
+  %tr
+    %th vivipar_des--***
+    %td=@stat.vivipar_des
+  %tr
+    %th vivipar_ut--***
+    %td=@stat.vivipar_ut
+  %tr
+    %th ocupvivivpar--***
+    %td=@stat.ocupvivivpar
+  %tr
+    %th prom_ocup--***
+    %td=@stat.prom_ocup
+  %tr
+    %th pro_ocup_c--***
+    %td=@stat.pro_ocup_c
+  %tr
+    %th vph_pisodt--***
+    %td=@stat.vph_pisodt
+  %tr
+    %th vph_pisoti--***
+    %td=@stat.vph_pisoti
+  %tr
+    %th vph_1dor--***
+    %td=@stat.vph_1dor
+  %tr
+    %th vph_2ymasd--***
+    %td=@stat.vph_2ymasd
+  %tr
+    %th vph_1cuart--***
+    %td=@stat.vph_1cuart
+  %tr
+    %th vph_2cuart--***
+    %td=@stat.vph_2cuart
+  %tr
+    %th vph_3ymascuart--***
+    %td=@stat.vph_3ymascuart
+  %tr
+    %th vph_c_elec--***
+    %td=@stat.vph_c_elec
+  %tr
+    %th vph_s_elec--***
+    %td=@stat.vph_s_elec
+  %tr
+    %th vph_aguadv--***
+    %td=@stat.vph_aguadv
+  %tr
+    %th vph_aguafv--***
+    %td=@stat.vph_aguafv
+  %tr
+    %th vph_excsa--***
+    %td=@stat.vph_excsa
+  %tr
+    %th vph_drenaj--***
+    %td=@stat.vph_drenaj
+  %tr
+    %th vph_nodren--***
+    %td=@stat.vph_nodren
+  %tr
+    %th vph_c_serv--***
+    %td=@stat.vph_c_serv
+  %tr
+    %th vph_snbien--***
+    %td=@stat.vph_snbien
+  %tr
+    %th vph_radio--***
+    %td=@stat.vph_radio
+  %tr
+    %th vph_tv--***
+    %td=@stat.vph_tv
+  %tr
+    %th vph_refri--***
+    %td=@stat.vph_refri
+  %tr
+    %th vph_lavad--***
+    %td=@stat.vph_lavad
+  %tr
+    %th vph_auto--***
+    %td=@stat.vph_auto
+  %tr
+    %th vph_pc--***
+    %td=@stat.vph_pc
+  %tr
+    %th vph_tel--***
+    %td=@stat.vph_tel
+  %tr
+    %th vph_cell--***
+    %td=@stat.vph_cell
+  %tr
+    %th vph_inter--***
+    %td=@stat.vph_inter
+  %tr
+    %th tam_loc--***
+    %td=@stat.tam_loc

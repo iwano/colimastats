@@ -1,15 +1,20 @@
 class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
-  def getcity
-    @city = Location.find(params[:id])
-    respond_to do |format|  
-      format.js 
-    end
+  def getcities
+    @cities = City.where(:state_id=>params[:id]) unless params[:id].blank?
+    render :partial => "cities", :locals => { :cities => @cities}
+  end
+
+  def getlocalities
+    @localities = Locality.where(:city_id=>params[:id]) unless params[:id].blank?
+    render :partial => "localities", :locals => { :localities => @localities}
   end
 
   def index
     @locations = Location.all
+    @location = Location.new
+    @states = State.all
     @json = Location.all.to_gmaps4rails
 
     respond_to do |format|
@@ -49,10 +54,17 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = Location.new(params[:location])
+    if params[:location][:name] == nil
+      state = State.find(params[:location][:state_id])
+      city = City.find(params[:location][:city_id])
+      locality = Locality.find(params[:location][:locality_id])
+      address = "#{locality.name}, #{city.name} - #{state.name}"
+      @location.name = locality.name
+      @location.address = address
+    end
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
         format.json { render json: @location, status: :created, location: @location }
       else
         format.html { render action: "new" }

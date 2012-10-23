@@ -1,0 +1,4 @@
+- if !@localities.blank?
+  = select("location", "locality_id", @localities.collect {|p| [ p.name, p.id ] }, { :prompt => "Locality" })
+- else
+  = select("location", "locality_id", [], { :prompt => "Locality" })
