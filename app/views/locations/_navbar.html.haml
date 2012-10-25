@@ -5,10 +5,10 @@
       = render 'cities', f: f
     #localitiesSelect
       = render 'localities', f: f
-    %a{:href => "/", :title => "Help"} ?
-    %a{:href => "/", :title => "Hide Markers", :id => "hideMarkers"} x
-    %a{:href => "/", :title => "Show Markers", :id => "showMarkers"} #
-    %a{:href => "/", :title => "Reload", :id => "reload"} +
-    %button{:href => "/", :title => "Go here", :id => "gohere", :disabled => true} ><
-    = link_to 'New Location', new_location_path
+    %button{:href => "/", :title => "Go here", :id => "gohere", :disabled => true} Go
+    %button{:href => "/", :title => "Show Markers", :id => "showMarkers"} Show
+    %button{:href => "/", :title => "Hide Markers", :id => "hideMarkers"} Hide
+    %button{:href => "/", :title => "Reload", :id => "reload"} Reload
+    %button{:href => "/", :title => "Help"} Help
+    %button{:href => new_location_path, :title => "Free Marker", :id => "freeMarker"} Free
     %br/

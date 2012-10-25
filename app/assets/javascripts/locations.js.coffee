@@ -68,6 +68,6 @@ $(document).ready ->
     Gmaps4Rails.map.setCenter(centerpoint)
     Gmaps4Rails.map.setZoom(17)
 
-  $('#reload').click (e) ->
-    e.preventDefault()
-    Gmaps4Rails.create_google_markers_from_markers()
+  // $('#reload').click (e) ->
+  //   e.preventDefault()
+  //   Gmaps4Rails.create_google_markers_from_markers()
