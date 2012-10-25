@@ -52,3 +52,22 @@ h1{
   height:217px;
   overflow-y:scroll;
 }
+
+
+
+@media screen and (max-width:1025px){
+    #gmaps4rails_map {
+      width: 600px;
+      height: 660px;
+    }
+
+}
+@media screen and (max-width:755px){
+    #main{
+      float:none;
+    }
+    #gmaps4rails_map {
+      width: 450px;
+      height: 920px;
+    }
+}
