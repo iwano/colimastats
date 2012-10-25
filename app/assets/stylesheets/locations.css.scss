@@ -65,15 +65,13 @@ h1{
     }
 
 }
-@media screen and (max-width:1000px){
+@media screen and (max-width:890px){
+    #main{
+      float:none;
+      margin-right: 0;
+    }
     #gmaps4rails_map {
-      width: 600px;
-      height: 920px;
-    }
-    #markers{
-      height:300px;
-    }
-    #stats{
-      height: 500px;
+      width: 885px;
+      height: 640px;
     }
 }
