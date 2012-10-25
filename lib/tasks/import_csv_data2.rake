@@ -7,7 +7,7 @@ namespace :db do
     CSV.foreach("localities.csv") do |row|
       Locality.create(
         :city_id => row[0],
-        :name => row[1].to_s,
+        :name => row[1],
         :state_id => row[2]
       )
     end
