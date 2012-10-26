@@ -26,11 +26,10 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-    @location = Location.find(params[:id])
+    @location = Location.find_by_name(params[:name])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @location }
+      format.js
     end
   end
 
@@ -96,8 +95,7 @@ class LocationsController < ApplicationController
     @location.destroy
 
     respond_to do |format|
-      format.html { redirect_to locations_url }
-      format.json { head :no_content }
+      format.js
     end
   end
 end

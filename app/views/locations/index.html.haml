@@ -1,16 +1,11 @@
 #main  
   = gmaps4rails(@json)
 
-%script{:type => "test/javascript"}
-  alert("About to register callback");
-
-  function gmaps4rails_callback() {
-  alert("gmaps4_rails callback");
-  }
-
 = render 'navbar'
 
 = render 'stats'
+
+= render 'modals'
 
 %h1 Marcadores
 

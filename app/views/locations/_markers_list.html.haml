@@ -1,8 +1,9 @@
 #markers
-  %table
-
+  %table#markers
     - @locations.each do |location|
-      %tr
+      %tr{:id => location.id}
         %th= link_to location.name, '/', class: 'show_marker_stats'
-        %td= link_to 'Detalles', location
-        %td= link_to 'Borrar', location, method: :delete, data: { confirm: 'Are you sure?' }
+        %td 
+          %a{:href => "/", :class => "marker-details"} Detalles
+        -if location.name != 'Total de la Entidad'
+          %td= link_to 'Borrar', location, method: :delete, data: { confirm: 'Are you sure?' }, remote: true

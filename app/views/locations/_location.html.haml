@@ -1,0 +1,10 @@
+#details-modal.modal{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", :class=>'modal hide fade'}
+  .modal-header
+    %h3#myModalLabel Locality Details
+  .modal-body
+    %p Nombre: #{@location.name}
+    %p Direccion: #{@location.address}
+    %p Longitud: #{@location.longitude}
+    %p Latitud: #{@location.latitude}
+  .modal-footer
+    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Ok

@@ -1,0 +1,6 @@
+var modal = $("<%= escape_javascript(render @location)%>");
+modal.insertAfter('#help-modal');
+$('#details-modal').modal('show');
+$('#details-modal').on('hidden', function () {
+  $(this).remove();
+})

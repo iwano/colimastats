@@ -1,0 +1,10 @@
+#help-modal.modal{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", :class=>'modal hide fade'}
+  .modal-header
+    %h3#myModalLabel Help
+  .modal-body
+    %p Colima-Stats es una aplicacion web para consultar y visualizar informacion acerca de cualquiera de las localidades que se encuentran en el estado de Colima (asi como su localizacion en el mapa).
+    %p Utiliza los combobox para agregar nuevos marcadores al mapa (globos rojos que se encuentran en el mapa).
+    %p Una vez creados, los marcadores apareceran tanto en el mapa, como en la lista de marcadores (Abajo a la derecha).
+    %p Para consultar los datos de la localidad haz click en el marcador, ya sea desde el mapa o desde la lista de marcadores.
+  .modal-footer
+    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Ok
