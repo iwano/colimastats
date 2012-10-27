@@ -3,6 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
+  
+  h = $(window).height()
+  $('#map_container').height(h)
+  $('#gmaps4rails_map').height(h)
+
   $("select#location_state_id").change ->
     state = undefined
     state = $("select#location_state_id :selected").val()

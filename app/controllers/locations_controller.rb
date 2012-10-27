@@ -1,6 +1,9 @@
 class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
+  def graphs
+  end
+
   def getcities
     @cities = City.where(:state_id=>params[:id]) unless params[:id].blank?
     render :partial => "cities", :locals => { :cities => @cities}

@@ -5,4 +5,6 @@ Colimastats::Application.routes.draw do
   get 'locations/getcities/:id', :controller=>'locations', :action => 'getcities'
   get 'locations/getlocalities/:id', :controller=>'locations', :action => 'getlocalities'
   get 'stats/show'
+  get 'locations/graphs'
+  match 'graphs', to: 'locations#graphs'
 end
