@@ -1,0 +1,1 @@
+(function(){$(document).ready(function(){return $("a#graph").click(function(e){var t;return e.preventDefault(),t=svg.selectAll(".circle").data([32,57,112,293])})})}).call(this);
