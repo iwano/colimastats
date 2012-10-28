@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-  
+
   h = $(window).height()
   $('#map_container').height(h)
   $('#gmaps4rails_map').height(h)
@@ -98,4 +98,8 @@ $(document).ready ->
       url: "locations/show"
       type: "get"
       data: {name: name}
+
+  $('#graphs').click (e) ->
+    e.preventDefault()
+    window.open('/graphs');
     

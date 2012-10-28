@@ -5,5 +5,5 @@ class City < ActiveRecord::Base
   belongs_to :state
   has_many :locations
 
-  default_scope order: 'cities.name ASC'
+  default_scope order: 'cities.id ASC'
 end

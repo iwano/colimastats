@@ -5,6 +5,7 @@ gem 'faker', '1.0.1'
 gem 'jquery-rails'
 gem "haml-rails"
 gem 'gmaps4rails', '0.8.8'
+gem 'gon'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

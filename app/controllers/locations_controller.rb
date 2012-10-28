@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def graphs
+    gon.cities = get_cities_total_pob_numbers
   end
 
   def getcities
@@ -101,4 +102,15 @@ class LocationsController < ApplicationController
       format.js
     end
   end
+
+    private
+
+      def get_cities_total_pob_numbers
+        c = [4, 98, 286, 386, 457, 525, 574, 525, 574, 753, 796, 1177, 1]
+        [{name:'Armeria', total:28695, m:14456, f:14239}, {name:'Colima', total:146904, m:71556, f:75348}, 
+          {name:'Comala', total:20888, m:10543, f:10345}, {name:'Coquimatlan', total:19385, m:9709, f:9676}, 
+          {name:'Cuauhtemoc', total:27107, m:13483, f:13624}, {name:'Ixtlahuacan', total:5300, m:2679, f:2621}, 
+          {name:'Manzanillo', total:161420, m:81007, f:80413}, {name:'Minatitlan', total:8174, m:4196, f:3978}, 
+          {name:'Tecoman', total:112726, m:56804, f:55922}, {name:'Villa de Alvarez', total:119956, m:58357, f:61599}]
+      end
 end

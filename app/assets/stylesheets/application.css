@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require graphs.css.scss
 */
 html{
   height:100%;

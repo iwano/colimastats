@@ -2,4 +2,4 @@
   = select("location", "city_id", @cities.collect {|p| [ p.name, p.id ] }, { :prompt => "City" })
 - else
   = select("location", "city_id", [], { :prompt => "City" })
-%button{:href => new_location_path, :title => "Free Marker", :id => "freeMarker"} (*)
+%button{:href => "/", :title => "Graphs", :id => "graphs"} (+)
