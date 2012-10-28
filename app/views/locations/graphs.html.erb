@@ -5,15 +5,20 @@
     svg.remove();
   }
     var dataset = gon.cities;
+    var padding = 5;
 
     var w = 900;
     var h = 600;
-    var barPadding = 1;
+    var barPadding = 15;
 
     var svg = d3.select("#main-graphs")
             .append("svg")
             .attr("width", w)
             .attr("height", h);
+    
+    var yScale = d3.scale.linear()
+                     .domain([0, d3.max(dataset, function(d) { return d.total; })])
+                     .range([h - padding, padding*6]);
 
     svg.selectAll("rect")
     .data(dataset)
@@ -21,17 +26,53 @@
     .append("rect")
     .attr("x", function(d, i) {
     return i * (w / dataset.length);
-})
+    })
     .attr("y", function(d) {
-    return h - d.total / 300;
-})
+    return yScale(d.total);
+    })
     .attr("width", w / dataset.length - barPadding)
     .attr("height", function(d) {
-    return d.total / 300;
-})
+    return h -yScale(d.total);
+    })
     .attr("fill", function(d) {
-    return "rgba("+ (Math.round(d.total / 1000)) + ", 0, 0, 0.8)";
-});
+    return "rgba(221, 121, 0, .7)";
+    });
+
+    svg.selectAll(".m")
+    .data(dataset)
+    .enter()
+    .append("rect")
+    .attr("x", function(d, i) {
+    return i * (w / dataset.length) -5;
+    })
+    .attr("y", function(d) {
+    return yScale(d.m);
+    })
+    .attr("width", w / dataset.length - barPadding)
+    .attr("height", function(d) {
+    return h -yScale(d.m);
+    })
+    .attr("fill", function(d) {
+    return "rgba(80,171,236, 0.9)";
+    });
+
+    svg.selectAll(".f")
+    .data(dataset)
+    .enter()
+    .append("rect")
+    .attr("x", function(d, i) {
+    return i * (w / dataset.length) +5;
+    })
+    .attr("y", function(d) {
+    return yScale(d.f);
+    })
+    .attr("width", w / dataset.length - barPadding)
+    .attr("height", function(d) {
+    return h -yScale(d.f);
+    })
+    .attr("fill", function(d) {
+    return "rgba(237, 172, 217, 0.7)";
+    });
 
     svg.selectAll("text")
    .data(dataset)
@@ -44,7 +85,7 @@
         return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
     })
    .attr("y", function(d) {
-        return h - (d.total / 300) + 14;
+        return (yScale(d.total)) + 14;
     })
    .attr("font-family", "sans-serif")
    .attr("font-size", "11px")
@@ -62,13 +103,81 @@
         return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
     })
    .attr("y", function(d) {
-        return h - (d.total / 300) - 5;
+        return (yScale(d.total)) - 5;
     })
    .attr("font-family", "sans-serif")
    .attr("font-size", "25px")
    .attr("font-weight", "bold")
    .attr("fill", "black")
    .attr("text-anchor", "middle");
+
+   svg
+    .append("rect")
+    .attr("x", 230)
+    .attr("y", 200)
+    .attr("width", 150)
+    .attr("height", 100)
+    .attr("fill", "white");
+
+  svg
+    .append("rect")
+    .attr("x", 240)
+    .attr("y", 270)
+    .attr("width", 20)
+    .attr("height", 20)
+    .attr("fill", function(d) {
+    return "rgba(237, 172, 217, 1)";
+    });
+
+  svg
+   .append("text")
+   .text('Mujeres')
+   .attr("x", 275)
+   .attr("y", 282)
+   .attr("font-family", "sans-serif")
+   .attr("font-size", "11px")
+   .attr("fill", "black")
+   .attr("font-weight", "bold");
+
+  svg
+    .append("rect")
+    .attr("x", 240)
+    .attr("y", 240)
+    .attr("width", 20)
+    .attr("height", 20)
+    .attr("fill", function(d) {
+    return "rgba(80,171,236, 1)";
+    });
+
+  svg
+   .append("text")
+   .text('Hombres')
+   .attr("x", 275)
+   .attr("y", 252)
+   .attr("font-family", "sans-serif")
+   .attr("font-size", "11px")
+   .attr("fill", "black")
+   .attr("font-weight", "bold");
+
+  svg
+    .append("rect")
+    .attr("x", 240)
+    .attr("y", 210)
+    .attr("width", 20)
+    .attr("height", 20)
+    .attr("fill", function(d) {
+    return "rgba(221, 121, 0, .7)";
+    });
+
+  svg
+   .append("text")
+   .text('Total')
+   .attr("x", 275)
+   .attr("y", 222)
+   .attr("font-family", "sans-serif")
+   .attr("font-size", "11px")
+   .attr("fill", "black")
+   .attr("font-weight", "bold");
 
 </script>
 
