@@ -4,10 +4,6 @@
 
 $(document).ready ->
 
-  h = $(window).height()
-  $('#map_container').height(h)
-  $('#gmaps4rails_map').height(h)
-
   $("select#location_state_id").change ->
     state = undefined
     state = $("select#location_state_id :selected").val()
@@ -45,12 +41,13 @@ $(document).ready ->
     false
 
   add_marker = (data) ->
-    row = "<tr id='" + data.id + "'><th><a href='/' class='show_marker_stats'>" + data.name + "</a></th><td><a href='/' class='marker-details'>Detalles</a></td>"
-    if data.name != 'Total de la Entidad'
-      row += "<td><a href='/locations/" + data.id + "' data-confirm='Estas seguro?' data-method='delete' data-remote='true' rel='nofollow' class='marker-details'>Borrar</a></td></tr>"
-    else
-      row += "</tr>"
-    $('table#markers').append($(row))
+    if !data.exist
+      row = "<tr id='" + data.id + "'><th><a href='/' class='show_marker_stats'>" + data.name + "</a></th><td><a href='/' class='marker-details'>Detalles</a></td>"
+      if data.name != 'Total de la Entidad'
+        row += "<td><a href='/locations/" + data.id + "' data-confirm='Estas seguro?' data-method='delete' data-remote='true' rel='nofollow' class='marker-details'>Borrar</a></td></tr>"
+      else
+        row += "</tr>"
+      $('table#markers').append($(row))
 
   $('#hideMarkers').click (e) ->
     e.preventDefault()

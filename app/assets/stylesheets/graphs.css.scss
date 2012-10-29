@@ -9,7 +9,7 @@ div.bar {
 #main-graphs{
   width:900px;
   margin:0 auto;
-  margin-top: -8px;
+  margin-top: 5em;
 }
 
 .axis path,
@@ -22,4 +22,31 @@ div.bar {
 .axis text {
     font-family: sans-serif;
     font-size: 11px;
+}
+
+.arrow{
+  text-indent: -9999px;
+  display: inline-block;
+  height:128px;
+  width: 128px;
+  opacity:.5;
+  &:hover{
+    opacity:1;
+    color:#666;
+    background-color: #eee;
+  }
+}
+
+.arrow_left{
+  float:left;
+  background-image:url(arrow_left.png);  
+}
+
+.arrow_right{
+  float:right;
+  background-image:url(arrow_right.png);
+}
+
+.arc path {
+  stroke: #fff;
 }
