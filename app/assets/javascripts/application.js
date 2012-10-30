@@ -13,6 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require d3.v2.min.js
+//= require CustomTooltip.js
+//= require plugins.js
+//= require script.js
+//= require libs/d3.csv.min.js
+//= require libs/d3.chart.min.js
 //= require_tree .
 
 
