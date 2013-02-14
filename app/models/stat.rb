@@ -27,7 +27,7 @@ class Stat < ActiveRecord::Base
   :vph_excsa, :vph_drenaj, :vph_nodren, :vph_c_serv, :vph_snbien, :vph_radio, :vph_tv, :vph_refri, 
   :vph_lavad, :vph_auto, :vph_pc, :vph_tel, :vph_cell, :vph_inter, :tam_loc, :locality_number
 
-  belongs_to :locality
+  has_one :locality
   belongs_to :state
   belongs_to :city
 end

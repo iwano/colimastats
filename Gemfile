@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem "haml-rails"
 gem 'gmaps4rails', '0.8.8'
 gem 'gon'
+gem 'comma'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
